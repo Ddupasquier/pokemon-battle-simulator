@@ -1,4 +1,16 @@
 body {
   margin: 0;
 }
+
+nav {
+  position: fixed;
+  top: 0;
+  color: black;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  color: black;
+}
 /*# sourceMappingURL=app-styles.css.map */
