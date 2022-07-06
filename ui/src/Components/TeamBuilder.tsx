@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TeamBuilder = () => {
-  return <></>;
+  return <div className="team-builder">Team Builder</div>;
 };
 
 export default TeamBuilder;

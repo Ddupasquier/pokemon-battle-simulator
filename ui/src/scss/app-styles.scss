@@ -2,14 +2,54 @@ body {
   margin: 0;
 }
 
-nav {
+.nav {
   position: fixed;
-  top: 0;
-  color: rgb(0, 0, 0);
+  width: 100vw;
+  display: flex;
+  background: black;
+  .n {
+    text-decoration: none;
+  }
+  .nav-item {
+    padding: 0.25rem 1rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.5s;
+    &:hover {
+      color: #ffc107;
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(139, 139, 139, 0.5) 50%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    }
+  }
+}
+
+.landing {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 100vh;
+  border: rgb(255, 0, 0) solid;
+}
+
+.team-builder {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 100vh;
+  border: rgb(0, 255, 0) solid;
 }
 
 footer {
-  position: fixed;
+  padding: 0.15rem 1rem;
   bottom: 0;
+  text-align: right;
   color: rgb(0, 0, 0);
 }
