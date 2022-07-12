@@ -47,6 +47,77 @@ body {
   border: rgb(0, 255, 0) solid;
 }
 
+.battle {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 100vh;
+  border: rgb(0, 255, 242) solid;
+  .game-board {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 35% 35% 30%;
+    margin: 0 auto;
+    max-width: 80%;
+    aspect-ratio: 2.1/1;
+    border: rgb(0, 255, 242) solid;
+    div {
+      border: black dotted;
+    }
+    .enemy-health {
+      position: relative;
+      .health-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        position: absolute;
+        top: 2%;
+        left: 2%;
+        background: tan;
+        width: 70%;
+        aspect-ratio: 2.8/1;
+      }
+    }
+    .player-health {
+      position: relative;
+      .health-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        position: absolute;
+        bottom: 2%;
+        right: 2%;
+        background: tan;
+        width: 70%;
+        aspect-ratio: 2.8/1;
+      }
+    }
+    .bottom-bar {
+      display: flex;
+      grid-column: span 2;
+      align-items: center;
+      // justify-content: center;
+      .battle-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        width: 50%;
+        height: 100%;
+        border: rgb(0, 255, 242) solid;
+      }
+      .battle-menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50% 50%;
+        font-size: 6%;
+        font-weight: bold;
+        width: 40%;
+        height: 80%;
+        margin-left: 5%;
+        border: rgb(0, 255, 242) solid;
+      }
+    }
+  }
+}
+
 footer {
   padding: 0.15rem 1rem;
   bottom: 0;
