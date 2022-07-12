@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BattleMenu from '../Battle/BattleMenu';
 import BattleText from '../Battle/BattleText';
 import EnemyHealth from '../Battle/EnemyHealth';
 import PlayerHealth from '../Battle/PlayerHealth';
+import AudioPlayer from './AudioPlayer.jsx';
+
 
 function Battle() {
+  const [battleMenuShow, setBattleMenuShow] = useState(false);
+
+  const handleBattleMenuShow = () => {
+    setTimeout(() => {
+      setBattleMenuShow(true);
+    }, 1000);
+  };
+
   return (
     <div className="battle">
+      <AudioPlayer />
       <div className="game-board">
         <div className="enemy-health">
           <EnemyHealth />
@@ -17,8 +28,11 @@ function Battle() {
           <PlayerHealth />
         </div>
         <div className="bottom-bar">
-          <BattleText />
-          <BattleMenu />
+          <>
+            <BattleText />
+            {handleBattleMenuShow()}
+            {battleMenuShow ? <BattleMenu /> : null}
+          </>
         </div>
       </div>
     </div>
