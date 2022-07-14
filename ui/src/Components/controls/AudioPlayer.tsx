@@ -25,6 +25,13 @@ const AudioPlayer = () => {
   //   }
   // }, [battleRendered]);
 
+  // useeffect to autoplay audio
+  // useEffect(() => {
+  //   audio.play();
+  //   setIsPlaying(true);
+  // }
+  // , [audio]);
+
   const handlePlay = () => {
     if (!isPlaying) {
       audio.play();
