@@ -1,10 +1,21 @@
 import * as React from 'react';
+
 function PlayerHealth() {
-      return ( <div className="health-container">
-      <div className="pokemon-name">pokemon name</div>
-      <div className="health-bar">health bar</div>
-      <div className="health-count">health count</div>
-    </div> );
+  const max = 100,
+    name = 'Pokemon Name';
+  let current = max;
+
+  return (
+    <div className="health-container">
+      <div className="pokemon-name">{name}</div>
+      <div className="health-bar">
+        <div className="health-bar-fill" style={{ width: `${current}%` }}></div>
+      </div>
+      <div className="health-count">
+        {current}/{max}
+      </div>
+    </div>
+  );
 }
 
 export default PlayerHealth;
