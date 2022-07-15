@@ -52,13 +52,15 @@ body {
   padding-bottom: 3rem;
   margin: 0 auto;
   width: 90vw;
-  height: 100vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .battle .game-board {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 35% 35% 30%;
-  margin: auto;
+  margin: 3rem auto;
   width: 60vw;
   aspect-ratio: 1.6/1;
   border: rgb(197, 197, 197) ridge;
@@ -155,11 +157,11 @@ body {
 .battle .game-board .bottom-bar .battle-menu {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 1fr 1fr;
   font-size: 1.6vw;
   font-weight: bold;
   width: 40%;
-  height: 90%;
+  aspect-ratio: 2.8/1;
   background: rgb(160, 160, 160);
   border: rgb(197, 197, 197) ridge;
 }
