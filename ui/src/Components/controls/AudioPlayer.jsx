@@ -24,7 +24,7 @@ const AudioPlayer = () => {
   // const { isPlaying, playAudio, toggleAudio } = useOutletContext();
 
   const { isPlaying, playAudio, toggleAudio } = useAudioPlayer();
-  
+
   useEffect(() => {
     playAudio();
   }, [playAudio]);

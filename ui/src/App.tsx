@@ -32,7 +32,7 @@ const App = () => {
   return (
     <div className="App">
       <Nav />
-      <Outlet context={{toggleAudio}} />
+      <Outlet context={{audio, isPlaying, playAudio, pauseAudio, toggleAudio}} />
       <Footer />
     </div>
   );
