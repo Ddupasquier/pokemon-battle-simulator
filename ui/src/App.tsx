@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Outlet, useOutletContext } from 'react-router-dom';
 import battleMusic from './Components/controls/assets/battle-music.mp3';
 import Footer from './Components/Footer';
@@ -6,33 +6,34 @@ import Nav from './Components/Nav';
 import './scss/app-styles.css';
 
 type AudioPlayerContext = {
-  audio: HTMLAudioElement
-  isPlaying: boolean
-  playAudio: () => void
-  pauseAudio: () => void
-  toggleAudio: () => void
-}
+  audio: HTMLAudioElement;
+  isPlaying: boolean;
+  playAudio: () => void;
+  pauseAudio: () => void;
+  toggleAudio: () => void;
+};
 
 const App = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [audio] = useState(new Audio(battleMusic));
+  console.log(isPlaying);
 
-  const playAudio = () => {
+  const playAudio = useCallback(() => {
     audio.play();
     setIsPlaying(true);
-  };
+  }, [audio]);
 
-  const pauseAudio = () => {
+  const pauseAudio = useCallback(() => {
     audio.pause();
     setIsPlaying(false);
-  };
+  }, [audio]);
 
   const toggleAudio = isPlaying ? pauseAudio : playAudio;
 
   return (
     <div className="App">
       <Nav />
-      <Outlet context={{audio, isPlaying, playAudio, pauseAudio, toggleAudio}} />
+      <Outlet context={{ isPlaying, playAudio, pauseAudio, toggleAudio }} />
       <Footer />
     </div>
   );
